@@ -1,16 +1,10 @@
-name: Build APK
-on: [push]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build with Buildozer
-        uses: ArtemSBulgakov/buildozer-action@v1
-        with:
-          buildozer_version: latest
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: package
-          path: bin/*.apk
+[app]
+title = Mon Supermarche
+package.name = mysupermarche
+package.domain = org.test
+source.include_exts = py,png,jpg,kv,atlas,db
+version = 1.0
+requirements = python3,kivy,fpdf,sqlite3
+orientation = portrait
+fullscreen = 0
+android.permissions = INTERNET,WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE
